@@ -34,11 +34,14 @@ describe('CaixaDaLanchonete', () => {
     ['dinheiro', 'R$ 2,85', ['cafe,1']],
     ['credito', 'R$ 3,09', ['cafe,1']],
     ['debito', 'R$ 3,00', ['cafe,1']],
+    ['debito', 'R$ 6,50', ['sanduiche,1']],
   ])('compra simples em %p deve resultar em %p', validaTeste);
 
   test.each([
     ['credito', 'R$ 11,85', ['cafe,1', 'sanduiche,1', 'queijo,1']],
     ['debito', 'R$ 11,50', ['cafe,1', 'sanduiche,1', 'queijo,1']],
+    ['dinheiro', 'R$ 10,92', ['cafe,1', 'sanduiche,1', 'queijo,1']],
+    ['dinheiro', 'R$ 13,30', ['cafe,1', 'combo1,1', 'chantily,1']],
   ])('compra de 3 itens em %p deve resultar em %p', validaTeste);
 
   test.each([
